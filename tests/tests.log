@@ -3,16 +3,16 @@ DEBUG tests/maceps_tests.c:26:
 ----- test_single
 DEBUG tests/maceps_tests.c:27: 
 ----- test_double
-DEBUG tests/vector_norms_tests.c:86: ----- RUNNING: ./tests/vector_norms_tests
-DEBUG tests/vector_norms_tests.c:76: 
+DEBUG tests/vector_norms_tests.c:85: ----- RUNNING: ./tests/vector_norms_tests
+DEBUG tests/vector_norms_tests.c:75: 
 ----- test_two_norm
-DEBUG tests/vector_norms_tests.c:77: 
+DEBUG tests/vector_norms_tests.c:76: 
 ----- test_one_norm
-DEBUG tests/vector_norms_tests.c:78: 
+DEBUG tests/vector_norms_tests.c:77: 
 ----- test_infty_norm
-DEBUG tests/vector_norms_tests.c:79: 
+DEBUG tests/vector_norms_tests.c:78: 
 ----- test_two_norm_dist
-DEBUG tests/vector_norms_tests.c:80: 
+DEBUG tests/vector_norms_tests.c:79: 
 ----- test_one_norm_dist
-DEBUG tests/vector_norms_tests.c:81: 
+DEBUG tests/vector_norms_tests.c:80: 
 ----- test_infty_norm_dist
