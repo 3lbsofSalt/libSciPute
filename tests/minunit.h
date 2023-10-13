@@ -5,8 +5,11 @@
 #include <stdio.h>
 #include <scipute/dbg.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define mu_suite_start() char *message = NULL
+
+#define float_eq(f1, f2, diff) fabs(f1 - f2) < diff 
 
 #define mu_assert(test, message) if(!(test)) {\
   log_err(message); return message; }
@@ -15,6 +18,7 @@
 
 #define RUN_TESTS(name) int main(int argc, char *argv[]) { \
   argc = 1; \
+  (void)argc; \
   debug("----- RUNNING: %s", argv[0]);\
   printf("----\nRUNNING: %s\n", argv[0]);\
   char *result = name();\
