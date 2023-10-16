@@ -16,7 +16,7 @@
 - [L-infinity Norm](vectorNorms/linf-norm.md)
 - [L1 Norm Distance](vectorNorms/l1-dist.md)
 - [L2 Norm Distance](vectorNorms/l2-dist.md)
-- [L-infinity Norm Distance](vectorNorms/linf-dist.md)
+- [L-infinity Norm Distance](vectorNorms/linf-distance.md)
 - [Associated Routines](vectorNorms/associated.md)
 
 ## Linear Regression Routine
