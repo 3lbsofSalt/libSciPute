@@ -1,3 +1,10 @@
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
 DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
 DEBUG tests/linreg_tests.c:20: 
 ----- test_linreg
@@ -6,25 +13,37 @@ DEBUG tests/maceps_tests.c:26:
 ----- test_single
 DEBUG tests/maceps_tests.c:27: 
 ----- test_double
-DEBUG tests/matrix_tests.c:81: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:75: 
+DEBUG tests/matrix_tests.c:126: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:117: 
 ----- test_matrix_creation
-[ERROR] (tests/matrix_tests.c:9: errno: None) Matrix Value Incorrect
-DEBUG tests/matrix_tests.c:76: 
------ test_upper_triangular
+DEBUG tests/matrix_tests.c:118: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:119: 
+----- test_solve_system
+DEBUG tests/matrix_tests.c:120: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:121: 
+----- test_multiply_matrix
 DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
 DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
+----- test_l2_norm
 DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
+----- test_l1_norm
 DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
+----- test_linf_norm
 DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
+----- test_l2_norm_dist
 DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
+----- test_l1_norm_dist
 DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
+----- test_linf_norm_dist
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
 DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
 DEBUG tests/linreg_tests.c:20: 
 ----- test_linreg
@@ -33,25 +52,37 @@ DEBUG tests/maceps_tests.c:26:
 ----- test_single
 DEBUG tests/maceps_tests.c:27: 
 ----- test_double
-DEBUG tests/matrix_tests.c:81: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:75: 
+DEBUG tests/matrix_tests.c:130: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:121: 
 ----- test_matrix_creation
-[ERROR] (tests/matrix_tests.c:9: errno: None) Matrix Value Incorrect
-DEBUG tests/matrix_tests.c:76: 
------ test_upper_triangular
+DEBUG tests/matrix_tests.c:122: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:123: 
+----- test_solve_system
+DEBUG tests/matrix_tests.c:124: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:125: 
+----- test_multiply_matrix
 DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
 DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
+----- test_l2_norm
 DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
+----- test_l1_norm
 DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
+----- test_linf_norm
 DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
+----- test_l2_norm_dist
 DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
+----- test_l1_norm_dist
 DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
+----- test_linf_norm_dist
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
 DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
 DEBUG tests/linreg_tests.c:20: 
 ----- test_linreg
@@ -60,24 +91,37 @@ DEBUG tests/maceps_tests.c:26:
 ----- test_single
 DEBUG tests/maceps_tests.c:27: 
 ----- test_double
-DEBUG tests/matrix_tests.c:81: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:75: 
+DEBUG tests/matrix_tests.c:127: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:118: 
 ----- test_matrix_creation
-DEBUG tests/matrix_tests.c:76: 
------ test_upper_triangular
+DEBUG tests/matrix_tests.c:119: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:120: 
+----- test_solve_system
+DEBUG tests/matrix_tests.c:121: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:122: 
+----- test_multiply_matrix
 DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
 DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
+----- test_l2_norm
 DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
+----- test_l1_norm
 DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
+----- test_linf_norm
 DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
+----- test_l2_norm_dist
 DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
+----- test_l1_norm_dist
 DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
+----- test_linf_norm_dist
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
 DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
 DEBUG tests/linreg_tests.c:20: 
 ----- test_linreg
@@ -86,24 +130,37 @@ DEBUG tests/maceps_tests.c:26:
 ----- test_single
 DEBUG tests/maceps_tests.c:27: 
 ----- test_double
-DEBUG tests/matrix_tests.c:82: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:76: 
+DEBUG tests/matrix_tests.c:130: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:121: 
 ----- test_matrix_creation
-DEBUG tests/matrix_tests.c:77: 
------ test_upper_triangular
+DEBUG tests/matrix_tests.c:122: 
+----- test_multiply_matrix
+DEBUG tests/matrix_tests.c:123: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:124: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:125: 
+----- test_solve_system
 DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
 DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
+----- test_l2_norm
 DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
+----- test_l1_norm
 DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
+----- test_linf_norm
 DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
+----- test_l2_norm_dist
 DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
+----- test_l1_norm_dist
 DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
+----- test_linf_norm_dist
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
 DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
 DEBUG tests/linreg_tests.c:20: 
 ----- test_linreg
@@ -112,24 +169,37 @@ DEBUG tests/maceps_tests.c:26:
 ----- test_single
 DEBUG tests/maceps_tests.c:27: 
 ----- test_double
-DEBUG tests/matrix_tests.c:82: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:76: 
+DEBUG tests/matrix_tests.c:130: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:121: 
 ----- test_matrix_creation
-DEBUG tests/matrix_tests.c:77: 
------ test_upper_triangular
+DEBUG tests/matrix_tests.c:122: 
+----- test_multiply_matrix
+DEBUG tests/matrix_tests.c:123: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:124: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:125: 
+----- test_solve_system
 DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
 DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
+----- test_l2_norm
 DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
+----- test_l1_norm
 DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
+----- test_linf_norm
 DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
+----- test_l2_norm_dist
 DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
+----- test_l1_norm_dist
 DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
+----- test_linf_norm_dist
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
 DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
 DEBUG tests/linreg_tests.c:20: 
 ----- test_linreg
@@ -138,189 +208,27 @@ DEBUG tests/maceps_tests.c:26:
 ----- test_single
 DEBUG tests/maceps_tests.c:27: 
 ----- test_double
-DEBUG tests/matrix_tests.c:81: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:75: 
+DEBUG tests/matrix_tests.c:132: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:123: 
 ----- test_matrix_creation
-[ERROR] (tests/matrix_tests.c:9: errno: None) Matrix Value Incorrect
-DEBUG tests/matrix_tests.c:76: 
------ test_upper_triangular
+DEBUG tests/matrix_tests.c:124: 
+----- test_multiply_matrix
+DEBUG tests/matrix_tests.c:125: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:126: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:127: 
+----- test_solve_system
 DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
 DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
+----- test_l2_norm
 DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
+----- test_l1_norm
 DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
+----- test_linf_norm
 DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
+----- test_l2_norm_dist
 DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
+----- test_l1_norm_dist
 DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:68: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:62: 
------ test_matrix_creation
-[ERROR] (tests/matrix_tests.c:9: errno: None) Matrix Value Incorrect
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:68: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:62: 
------ test_matrix_creation
-[ERROR] (tests/matrix_tests.c:8: errno: None) Incorrect matrix value
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:60: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:54: 
------ test_matrix_creation
-DEBUG tests/matrix_tests.c:55: 
------ test_upper_triangular
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:72: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:66: 
------ test_matrix_creation
-DEBUG tests/matrix_tests.c:67: 
------ test_upper_triangular
-DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
-DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
-DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
-DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
-DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
-DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
-DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:73: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:67: 
------ test_matrix_creation
-DEBUG tests/matrix_tests.c:68: 
------ test_upper_triangular
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:74: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:68: 
------ test_matrix_creation
-DEBUG tests/matrix_tests.c:69: 
------ test_upper_triangular
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:76: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:70: 
------ test_matrix_creation
-DEBUG tests/matrix_tests.c:71: 
------ test_upper_triangular
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:76: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:70: 
------ test_matrix_creation
-DEBUG tests/matrix_tests.c:71: 
------ test_upper_triangular
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:63: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:57: 
------ test_matrix_creation
-DEBUG tests/matrix_tests.c:58: 
------ test_upper_triangular
-DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
-DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
-DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
-DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
-DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
-DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
-DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
-DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
-DEBUG tests/linreg_tests.c:20: 
------ test_linreg
-DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
-DEBUG tests/maceps_tests.c:26: 
------ test_single
-DEBUG tests/maceps_tests.c:27: 
------ test_double
-DEBUG tests/matrix_tests.c:60: ----- RUNNING: ./tests/matrix_tests
-DEBUG tests/matrix_tests.c:54: 
------ test_matrix_creation
-DEBUG tests/matrix_tests.c:55: 
------ test_upper_triangular
-DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
-DEBUG tests/vector_norms_tests.c:70: 
------ test_two_norm
-DEBUG tests/vector_norms_tests.c:71: 
------ test_one_norm
-DEBUG tests/vector_norms_tests.c:72: 
------ test_infty_norm
-DEBUG tests/vector_norms_tests.c:73: 
------ test_two_norm_dist
-DEBUG tests/vector_norms_tests.c:74: 
------ test_one_norm_dist
-DEBUG tests/vector_norms_tests.c:75: 
------ test_infty_norm_dist
+----- test_linf_norm_dist

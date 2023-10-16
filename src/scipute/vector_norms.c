@@ -14,7 +14,7 @@ float *subtract_vector(float vector1[], float vector2[], int sizes) {
 
 }
 
-float two_norm(float vector[], int v_size) {
+float l2_norm(float vector[], int v_size) {
   float total = 0.0;
   for(int i = 0; i < v_size; i++) {
     total = total + (vector[i] * vector[i]);
@@ -23,14 +23,14 @@ float two_norm(float vector[], int v_size) {
   return sqrtf(total);
 }
 
-float two_norm_distance(float vector1[], float vector2[], int sizes) {
+float l2_distance(float vector1[], float vector2[], int sizes) {
   float *new_vec = subtract_vector(vector1, vector2, sizes);
-  float size = two_norm(new_vec, sizes);
+  float size = l2_norm(new_vec, sizes);
   free(new_vec);
   return size;
 }
 
-float one_norm(float vector[], int v_size) {
+float l1_norm(float vector[], int v_size) {
 
   float total = 0.0;
   for(int i = 0; i < v_size; i++) {
@@ -40,14 +40,14 @@ float one_norm(float vector[], int v_size) {
   return total;
 }
 
-float one_norm_distance(float vector1[], float vector2[], int sizes) {
+float l1_distance(float vector1[], float vector2[], int sizes) {
   float *new_vec = subtract_vector(vector1, vector2, sizes);
-  float size = one_norm(new_vec, sizes);
+  float size = l1_norm(new_vec, sizes);
   free(new_vec);
   return size;
 }
 
-float infty_norm(float vector[], int v_size) {
+float linf_norm(float vector[], int v_size) {
   float total = 0;
   for(int i = 0; i < v_size; i++) {
     if(fabs(vector[i]) > total) {
@@ -58,9 +58,9 @@ float infty_norm(float vector[], int v_size) {
   return total;
 }
 
-float infty_norm_distance(float vector1[], float vector2[], int sizes) {
+float linf_distance(float vector1[], float vector2[], int sizes) {
   float *new_vec = subtract_vector(vector1, vector2, sizes);
-  float size = infty_norm(new_vec, sizes);
+  float size = linf_norm(new_vec, sizes);
   free(new_vec);
   return size;
 }

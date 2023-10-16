@@ -9,7 +9,6 @@
 - [Forward Difference](derivativeApprox/forwardDifference.md)
 - [Backward Difference](derivativeApprox/backwardDifference.md)
 - [Central Difference](derivativeApprox/centralDifference.md)
-- [Associated Routines](derivativeApprox/associated.md)
 
 ## Vector Norm Routines
 - [L1 Norm](vectorNorms/l1-norm.md)
@@ -25,5 +24,5 @@
 
 ## Matrix Routines
 - [Matrix Usage](matrix/usage.md)
-- [Upper Triangular Calculation](matrix/upperTriangular.md)
-- [Back Substitution](matrix/backSubstitution.md)
+- [Gaussian Elimination](matrix/gaussian.md)
+- [Upper Triangular Back Substitution](matrix/UBackSubstitution.md)

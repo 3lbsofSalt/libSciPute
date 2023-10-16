@@ -7,12 +7,16 @@ The code can be compiled using the GNU C compiler `gcc`
 
 For example,
 
+```
     gcc maceps.c
+```
 
 will produce an executable `./a.exe` than can be executed. If you want a different name, the following will work a bit
 better
 
-    gfortran -o maceps maceps.c
+```
+    gcc -o maceps maceps.c
+```
 
 **Description/Purpose:** 
 This routine computes the smallest single precision value that can be represesnted
@@ -38,5 +42,21 @@ main() {
 ```
 
 **Implementation/Code:** The following is the code for `smaceps()`
+
+```c
+float maceps_single_precision() {
+  float mac_eps = 1;
+
+  // The machine epsilon is the last value before addition overflows it into a 1
+  // Therefore, the loop goes as long as this doesn't happen. If it does happen
+  // in this case, the value doesn't need to be changed because the next value
+  // has already been checked
+  while ((mac_eps * 0.5) + 1 != 1) {
+    mac_eps *= 0.5;
+  }
+
+  return mac_eps;
+}
+```
 
 **Last Modified:** October/2023

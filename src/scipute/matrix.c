@@ -45,7 +45,21 @@ void deleteMatrix(struct Matrix* matrix) {
   free(matrix);
 }
 
-struct Matrix* upperTriangular(struct Matrix* A) {
+double* multiplyMatrixVector(struct Matrix* m, double vec[]) {
+  double* result = calloc(m->rows, sizeof(double));
+  for(int i = 0; i < m->rows; i++) {
+    double total = 0;
+    for(int j = 0; j < m->cols; j++) {
+      total += getMatrixData(m, i, j) * vec[j];
+    }
+
+    result[i] = total;
+  }
+
+  return result;
+}
+
+void gaussianElimination(struct Matrix* A, double b[]) {
   struct Matrix* U = create_matrix(A->rows, A->cols);
 
   // Don't need to compute the first row, just move it over.
@@ -53,27 +67,35 @@ struct Matrix* upperTriangular(struct Matrix* A) {
     setMatrixData(U, 0, j, getMatrixData(A, 0, j));
   }
 
-  for(int j = 0; j < A->cols; j++) {
-    for(int i = j; i < A->rows; i++) {
-      // i2 
-      for(int i2 = i+1; i2 < A->rows; i2++) { // i2 represents the working 
-        double ratio = getMatrixData(A, i2, j) / getMatrixData(A, i, j);
-        
-        // j2 is used to go through the rest of the row to use the ratio to subtract the
-        // values determined by the ratio from the rest of the row
-        // note that any of the values below the pivot will not be set to 0,
-        // there is no need to waste the computation time
-        for(int j2 = j; j2 < A->cols; j2++) {
-          setMatrixData(U, i2, j2, getMatrixData(A, i2, j2) - getMatrixData(A, i, j2) * ratio);
-        }
+  for(int j = 0; j < A->cols; j++) { // Trying to get every column below pivot to 0
+    for(int iw = j + 1; iw < A->rows; iw++) { // iw for working row, start below the pivot
+      double ratio = getMatrixData(A, iw, j) / getMatrixData(A, j, j); // Using U here to get updated pivot value
+      for(int jw = j; jw < A->cols; jw++) {
+        setMatrixData(A, iw, jw, getMatrixData(A, iw, jw) - getMatrixData(A, j, jw) * ratio);
       }
+      b[iw] = b[iw] - (b[j] * ratio);
     }
   }
 
-  return U;
 }
 
-void back_sub(struct Matrix* U, double b[]) {
+// Assume U is an upper-triangular square matrix
+double* upperTriBackSub(struct Matrix* U, double c[]) {
+  double* x = calloc(U->cols, sizeof(double));
 
+  // Start at the bottom of the matrix
+  for(int i = U->rows - 1; i >= 0; i--) {
+    // Set x with an intermediate value
+    x[i] = c[i];
+    // Because we know that the matrix is upper triangular we can
+    // can start at the end of the row and substitute until we reach the pivot
+    for(int j = U->cols - 1; j > i; j--) {
+      // Substitute in the values and transform x accordingly
+      x[i] -= getMatrixData(U, i, j) * x[j];
+    }
+    x[i] /= getMatrixData(U, i, i);
+  }
+
+  return x;
 }
 

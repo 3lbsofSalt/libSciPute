@@ -15,7 +15,8 @@ void setMatrixDataFromArray(struct Matrix *matrix, double vals[]);
 void deleteMatrix(struct Matrix* matrix);
 void printMatrix(struct Matrix* m);
 
-struct Matrix* upperTriangular(struct Matrix* A);
-void back_sub(struct Matrix* U, double b[]);
+double* multiplyMatrixVector(struct Matrix* m, double vec[]);
+void gaussianElimination(struct Matrix* A, double b[]);
+double* upperTriBackSub(struct Matrix* U, double c[]);
 
 #endif
