@@ -66,6 +66,7 @@ char *test_back_sub() {
   mu_assert(float_eq(x[1], 2.5, 0.00001), "Second value in the back sub incorrect.");
   mu_assert(float_eq(x[2], -1, 0.00001), "Third value in the back sub incorrect.");
 
+  free(x);
   deleteMatrix(U);
 
   return NULL;
@@ -83,6 +84,7 @@ char *test_multiply_matrix() {
   mu_assert(ans[0] == 5, "The first value in the resulting matrix was incorrect");
   mu_assert(ans[1] == 11, "The second value in the resulting matrix was incorrect");
 
+  free(ans);
   deleteMatrix(A);
 
   return NULL;
@@ -118,6 +120,8 @@ char *test_solve_system() {
 
   printf("Abs error: %f\n", fabs(10 - total));
 
+  free(b);
+  free(x);
   deleteMatrix(A);
 
   return NULL;
@@ -142,6 +146,45 @@ char *test_lu_factorization() {
   return NULL;
 }
 
+char *test_lu_solve_system() {
+  struct Matrix* A = create_matrix(10, 10);
+  srand(time(0));
+  // Turn m into a diagonally dominant matrix,
+  // guaranteeing that there is a solution
+  // to whatever system of equations is produced.
+  for(int i = 0; i < 10; i++) {
+    for(int j = 0; j < 10; j++) {
+      double val = (double)rand() / RAND_MAX;
+      setMatrixData(A, i, j, val);
+    }
+
+    setMatrixData(A, i, i, 11);
+  }
+
+  double y[10] = { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+  double* b = multiplyMatrixVector(A, y);
+
+  struct Matrix* L = LUFactorization(A);
+  double* c = lowerTriBackSub(L, b);
+  double* x = upperTriBackSub(A, c);
+
+  float total = 0;
+  for(int i = 0; i < 10; i++) {
+    mu_assert(float_eq(x[i], 1, 0.00001), "Something went wrong with solving the system of equations.");
+    total += x[i] * x[i];
+  }
+
+  printf("Abs error: %f\n", fabs(10 - total));
+
+  free(x);
+  free(c);
+  free(b);
+  deleteMatrix(A);
+  deleteMatrix(L);
+
+  return NULL;
+}
+
 char *all_tests() {
   mu_suite_start();
 
@@ -151,6 +194,7 @@ char *all_tests() {
   mu_run_test(test_back_sub);
   mu_run_test(test_solve_system);
   mu_run_test(test_lu_factorization);
+  mu_run_test(test_lu_solve_system);
 
   return NULL;
 }

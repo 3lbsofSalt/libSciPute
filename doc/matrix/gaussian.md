@@ -21,6 +21,8 @@ better
 **Description/Purpose:** 
 This routine uses gaussian elimination to find an upper triangular matrix and
 modify an associated vector as if they were part of an augmented matrix.
+A use of this function should be followed by a use of the upperTriBackSub function
+to solve the associated equation.
 
 **Input:** 
 - `struct Matrix* A` - The **square** matrix that the elimination will be performed

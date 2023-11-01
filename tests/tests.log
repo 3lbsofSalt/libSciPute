@@ -121,3 +121,118 @@ DEBUG tests/vector_norms_tests.c:74:
 ----- test_l1_norm_dist
 DEBUG tests/vector_norms_tests.c:75: 
 ----- test_linf_norm_dist
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
+DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
+DEBUG tests/linreg_tests.c:20: 
+----- test_linreg
+DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
+DEBUG tests/maceps_tests.c:26: 
+----- test_single
+DEBUG tests/maceps_tests.c:27: 
+----- test_double
+DEBUG tests/matrix_tests.c:201: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:191: 
+----- test_matrix_creation
+DEBUG tests/matrix_tests.c:192: 
+----- test_multiply_matrix
+DEBUG tests/matrix_tests.c:193: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:194: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:195: 
+----- test_solve_system
+DEBUG tests/matrix_tests.c:196: 
+----- test_lu_factorization
+DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
+DEBUG tests/vector_norms_tests.c:70: 
+----- test_l2_norm
+DEBUG tests/vector_norms_tests.c:71: 
+----- test_l1_norm
+DEBUG tests/vector_norms_tests.c:72: 
+----- test_linf_norm
+DEBUG tests/vector_norms_tests.c:73: 
+----- test_l2_norm_dist
+DEBUG tests/vector_norms_tests.c:74: 
+----- test_l1_norm_dist
+DEBUG tests/vector_norms_tests.c:75: 
+----- test_linf_norm_dist
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
+DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
+DEBUG tests/linreg_tests.c:20: 
+----- test_linreg
+DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
+DEBUG tests/maceps_tests.c:26: 
+----- test_single
+DEBUG tests/maceps_tests.c:27: 
+----- test_double
+DEBUG tests/matrix_tests.c:202: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:191: 
+----- test_matrix_creation
+DEBUG tests/matrix_tests.c:192: 
+----- test_multiply_matrix
+DEBUG tests/matrix_tests.c:193: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:194: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:195: 
+----- test_solve_system
+DEBUG tests/matrix_tests.c:196: 
+----- test_lu_factorization
+DEBUG tests/matrix_tests.c:197: 
+----- test_lu_solve_system
+[ERROR] (tests/matrix_tests.c:173: errno: None) Something went wrong with solving the system of equations.
+DEBUG tests/derivative_approx_tests.c:47: ----- RUNNING: ./tests/derivative_approx_tests
+DEBUG tests/derivative_approx_tests.c:40: 
+----- test_forward_approx
+DEBUG tests/derivative_approx_tests.c:41: 
+----- test_backward_approx
+DEBUG tests/derivative_approx_tests.c:42: 
+----- test_central_approx
+DEBUG tests/linreg_tests.c:25: ----- RUNNING: ./tests/linreg_tests
+DEBUG tests/linreg_tests.c:20: 
+----- test_linreg
+DEBUG tests/maceps_tests.c:32: ----- RUNNING: ./tests/maceps_tests
+DEBUG tests/maceps_tests.c:26: 
+----- test_single
+DEBUG tests/maceps_tests.c:27: 
+----- test_double
+DEBUG tests/matrix_tests.c:202: ----- RUNNING: ./tests/matrix_tests
+DEBUG tests/matrix_tests.c:191: 
+----- test_matrix_creation
+DEBUG tests/matrix_tests.c:192: 
+----- test_multiply_matrix
+DEBUG tests/matrix_tests.c:193: 
+----- test_gaussian
+DEBUG tests/matrix_tests.c:194: 
+----- test_back_sub
+DEBUG tests/matrix_tests.c:195: 
+----- test_solve_system
+DEBUG tests/matrix_tests.c:196: 
+----- test_lu_factorization
+DEBUG tests/matrix_tests.c:197: 
+----- test_lu_solve_system
+DEBUG tests/vector_norms_tests.c:80: ----- RUNNING: ./tests/vector_norms_tests
+DEBUG tests/vector_norms_tests.c:70: 
+----- test_l2_norm
+DEBUG tests/vector_norms_tests.c:71: 
+----- test_l1_norm
+DEBUG tests/vector_norms_tests.c:72: 
+----- test_linf_norm
+DEBUG tests/vector_norms_tests.c:73: 
+----- test_l2_norm_dist
+DEBUG tests/vector_norms_tests.c:74: 
+----- test_l1_norm_dist
+DEBUG tests/vector_norms_tests.c:75: 
+----- test_linf_norm_dist

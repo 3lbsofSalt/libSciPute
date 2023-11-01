@@ -25,4 +25,5 @@
 ## Matrix Routines
 - [Matrix Usage](matrix/usage.md)
 - [Gaussian Elimination](matrix/gaussian.md)
+- [LU Factorization](matrix/LUFactorization.md)
 - [Upper Triangular Back Substitution](matrix/UBackSubstitution.md)
