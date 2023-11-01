@@ -4,3 +4,4 @@ bin/*
 build/*
 *.o
 **/*.o
+tests/tests.log
