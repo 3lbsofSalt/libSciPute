@@ -66,6 +66,8 @@ char *test_back_sub() {
   mu_assert(float_eq(x[1], 2.5, 0.00001), "Second value in the back sub incorrect.");
   mu_assert(float_eq(x[2], -1, 0.00001), "Third value in the back sub incorrect.");
 
+  deleteMatrix(U);
+
   return NULL;
 }
 
@@ -80,6 +82,8 @@ char *test_multiply_matrix() {
 
   mu_assert(ans[0] == 5, "The first value in the resulting matrix was incorrect");
   mu_assert(ans[1] == 11, "The second value in the resulting matrix was incorrect");
+
+  deleteMatrix(A);
 
   return NULL;
 }
@@ -114,6 +118,27 @@ char *test_solve_system() {
 
   printf("Abs error: %f\n", fabs(10 - total));
 
+  deleteMatrix(A);
+
+  return NULL;
+}
+
+char *test_lu_factorization() {
+  struct Matrix* A = create_matrix(3, 3);
+  double vals[9] = {1, 2, 3, 2, 3, 1, -2, 3, -2};
+  setMatrixDataFromArray(A, vals);
+
+  struct Matrix* L = LUFactorization(A);
+
+  double correctL[9] = {1, 0, 0, 2, 1, 0, -2, -7, 1};
+  double correctU[9] = {1, 2, 3, 0, -1, -5, 0, 0, -31};
+
+  check_matrix_values(L, correctL);
+  check_matrix_values(A, correctU);
+
+  deleteMatrix(A);
+  deleteMatrix(L);
+
   return NULL;
 }
 
@@ -125,6 +150,7 @@ char *all_tests() {
   mu_run_test(test_gaussian);
   mu_run_test(test_back_sub);
   mu_run_test(test_solve_system);
+  mu_run_test(test_lu_factorization);
 
   return NULL;
 }

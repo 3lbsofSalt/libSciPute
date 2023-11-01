@@ -31,6 +31,16 @@ void setMatrixDataFromArray(struct Matrix* m, double vals[]) {
   }
 }
 
+// Assume same size for both matrices
+// Set matrix m2 to be a copy of m1
+void copyMatrix(struct Matrix* m1, struct Matrix* m2) {
+  for(int i = 0; i < m1->rows; i++) {
+    for(int j = 0; j < m1->cols; j++) {
+      setMatrixData(m2, i, j, getMatrixData(m1, i, j));
+    }
+  }
+}
+
 void printMatrix(struct Matrix* m) {
   for(int i = 0; i < m->rows; i++) {
     for(int j = 0; j < m->cols; j++) {
@@ -99,3 +109,57 @@ double* upperTriBackSub(struct Matrix* U, double c[]) {
   return x;
 }
 
+// Assume L is a lower triangular square matrix
+double* lowerTriBackSub(struct Matrix* L, double c[]) {
+  double* x = calloc(L->cols, sizeof(double));
+
+  for(int i = 0; i < L->rows; i++) {
+    x[i] = c[i];
+
+    for(int j = 0; j < i; j++) {
+      x[i] -= getMatrixData(L, i, j) * x[j];
+    }
+    x[i] /= getMatrixData(L, i, i);
+  }
+
+  return x;
+}
+
+struct Matrix* LUFactorization(struct Matrix* A) {
+  struct Matrix* L = create_matrix(A->rows, A->cols);
+
+  // Setting all of the L pivots to 1 in preparation for the calculation
+  for(int i = 0; i < L->rows; i++) {
+    setMatrixData(L, i, i, 1);
+  }
+
+
+  // Dummy array so that I can get the elimination of A.
+  double* b = calloc(A->rows, sizeof(double));
+
+  struct Matrix* Acpy = create_matrix(A->rows, A->cols);
+  copyMatrix(A, Acpy);
+  gaussianElimination(A, b); // A henceforth will act as U, while Acpy will act as the original A matrix
+  free(b); // Get rid of dummy array
+
+
+  for(int j = 0; j < Acpy->cols; j++) {
+    for(int i = j + 1; i < Acpy->rows; i++) {
+      // i,j is the cell in L that we are calculating
+      double final = getMatrixData(Acpy, i, j);
+      // Reduce eq by the known values of L * U. (for this row and column)
+      // Note that we only know the values up to j for L, but the values past j
+      // are 0, so we don't need to worry about them.
+      for(int x = 0; x < j; x++) {
+        final -= getMatrixData(L, i, x) * getMatrixData(A, x, j);
+      }
+
+      final /= getMatrixData(A, j, j);
+      setMatrixData(L, i, j, final);
+    }
+  }
+
+  deleteMatrix(Acpy);
+
+  return L;
+}

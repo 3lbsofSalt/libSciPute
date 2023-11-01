@@ -18,5 +18,6 @@ void printMatrix(struct Matrix* m);
 double* multiplyMatrixVector(struct Matrix* m, double vec[]);
 void gaussianElimination(struct Matrix* A, double b[]);
 double* upperTriBackSub(struct Matrix* U, double c[]);
+struct Matrix* LUFactorization(struct Matrix* A);
 
 #endif
