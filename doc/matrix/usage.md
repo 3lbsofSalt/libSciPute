@@ -63,6 +63,22 @@ main() {
 ```
 The resulting matrix should have 3 rows, where each row is 1, 2, 3, 4.
 
+### Copying Matrix
+
+If it is necessary to copy the values of one matrix to another matrix of the same size,
+use the `copyMatrix` function, like so:
+
+```c
+main() {
+    struct Matrix* A = createMatrix(3, 4);
+    // ... populate A
+    struct Matrix* B = createMatrix(A->rows, A->cols);
+    copyMatrix(A, B);
+}
+```
+
+In the above example, A will be copied into B. Please note that the function assumes that
+both matrices will be the same.
 
 ### Printing Matrix 
 The following code prints the entire matrix for debugging purposes
