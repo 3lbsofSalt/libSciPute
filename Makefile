@@ -31,7 +31,7 @@ build:
 	@mkdir -p bin
 
 # The Unit Tests
-.PHONY: tests
+.PHONY: testsmakefil
 tests: LDLIBS += $(TARGET)
 tests: $(TESTS)
 	sh ./tests/runtests.sh
