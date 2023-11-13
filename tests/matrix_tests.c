@@ -118,8 +118,6 @@ char *test_solve_system() {
     total += x[i] * x[i];
   }
 
-  printf("Abs error: %f\n", fabs(10 - total));
-
   free(b);
   free(x);
   deleteMatrix(A);
@@ -173,8 +171,6 @@ char *test_lu_solve_system() {
     mu_assert(float_eq(x[i], 1, 0.00001), "Something went wrong with solving the system of equations.");
     total += x[i] * x[i];
   }
-
-  printf("Abs error: %f\n", fabs(10 - total));
 
   free(x);
   free(c);

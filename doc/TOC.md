@@ -27,3 +27,9 @@
 - [Gaussian Elimination](matrix/gaussian.md)
 - [LU Factorization](matrix/LUFactorization.md)
 - [Upper Triangular Back Substitution](matrix/UBackSubstitution.md)
+
+## Root Finding Routines
+- [Bisection Method](root_finding/bisection.md)
+- [Newton's Method](root_finding/newtons.md)
+- [Secant Method](root_finding/secant.md)
+- [Hybrid Method](root_finding/hybrid-bisect-secant.md)

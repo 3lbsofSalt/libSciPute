@@ -7,17 +7,20 @@
 #include <stdlib.h>
 
 
-int bisection(mathFunc func, double startVal, double endVal, double tol, int maxIter, double* result) {
+int bisection(mathFunc func, double startVal, double endVal, double tol, double* result) {
 
   *result = 0;
 
   double calculatedStart = func(startVal);
   double calculatedEnd = func(endVal);
 
+  // If the start value and end value have the same sign then there is not guaranteed to be a root between them.
+  // Exit with  an error
   if((calculatedStart > 0 && calculatedEnd > 0) || (calculatedStart < 0 && calculatedEnd < 0)) {
     return -1;
   } 
 
+  // Check if either value currently constitutes a root
   if(fabs(func(startVal)) <= tol) {
     *result = startVal;
     return 0;
@@ -26,23 +29,23 @@ int bisection(mathFunc func, double startVal, double endVal, double tol, int max
     return 0;
   }
 
-  int i = 0;
-
   double mid = 0;
   double res = 0;
 
-  while(i++ <= maxIter && fabs(endVal - startVal) > tol) {
+  while(fabs(endVal - startVal) > tol) {
+    // Find the midpoint;
     mid = (endVal + startVal) / 2;
-    *result = endVal - *result;
-    
+    // Evaluate it
     res = func(mid);
 
+    // Check it
     if(fabs(res) < tol) {
       *result = mid;
       return 0;
     }
 
-    if(res < 0 && func(endVal) < 0) {
+    // Set the midpoint as the correct value
+    if((res < 0 && func(endVal) < 0) || (res > 0 && func(endVal) > 0)) {
       endVal = mid;
     } else {
       startVal = mid;
@@ -50,6 +53,8 @@ int bisection(mathFunc func, double startVal, double endVal, double tol, int max
 
   }
 
+  // The values converged to be not as wide as the tolerance. This should probably
+  // never happen 
   return -2;
 }
 
@@ -68,7 +73,7 @@ int newtons(mathFunc func, double initial, double tol, int maxIter, double* resu
     double next_x = initial - y / yder;
 
     if(fabs(next_x - initial) < tol) {
-      return -2;
+      return -3;
     }
 
     if(fabs(func(next_x)) < tol) {
@@ -80,7 +85,7 @@ int newtons(mathFunc func, double initial, double tol, int maxIter, double* resu
 
   }
 
-  return 0;
+  return -2;
 }
 
 int secant(mathFunc func, double startVal, double endVal, double tol, int maxIter, double *result) {
@@ -108,7 +113,7 @@ int secant(mathFunc func, double startVal, double endVal, double tol, int maxIte
   return -1;
 }
 
-int hybrid(mathFunc func, double startVal, double endVal, double tol, int maxIter, double *result) {
+int hybrid_bisect_secant(mathFunc func, double startVal, double endVal, double tol, int maxIter, double *result) {
   double calculatedStart = func(startVal);
   double calculatedEnd = func(endVal);
 
@@ -124,17 +129,14 @@ int hybrid(mathFunc func, double startVal, double endVal, double tol, int maxIte
     return 0;
   }
 
-  int i = 0;
-
   double mid = 0;
   double res = 0;
 
   int error = 1;
 
-  while(error != 0) {
-    for(int i = 0; i <= 5; i++) {
+  while(error) {
+    for(int i = 0; i <= 4; i++) {
       mid = (endVal + startVal) / 2;
-      *result = endVal - *result;
 
       res = func(mid);
 
@@ -143,15 +145,19 @@ int hybrid(mathFunc func, double startVal, double endVal, double tol, int maxIte
         return 0;
       }
 
-      if(res < 0 && func(endVal) < 0) {
+      if((res < 0 && func(endVal) < 0) || (res > 0 && func(endVal) > 0)) {
         endVal = mid;
       } else {
         startVal = mid;
       }
     }
 
-    error = secant(func, startVal, endVal, tol, maxIter, result);
+    // The next value for the secant will be within the range so we're going to try
+    // the secant method. It is still possible for it to fail so we can still fall
+    // back to the bisection method
+    if((res > endVal && res < startVal) || (res < endVal && res > startVal)) {
+      error = secant(func, startVal, endVal, tol, maxIter, result);
+    }
   }
-
-  return 0;
+  return error;
 }

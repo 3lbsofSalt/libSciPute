@@ -31,7 +31,6 @@ int fixed_point(mathFunc func, double initVal, double tol, int maxIter, double *
  * PLEASE NOTE THAT THIS FUNCTION WAS WRITTEN FOR ACADEMIC PURPOSES ONLY, YOU SHOULD NOT USE IT.
  */
 int fixed_point_amplified(mathFunc func, double initVal, double tol, int maxIter, double *result) {
-  printf("%f\n", fabs(1-centralDifference(initVal, 0.000001, func)));
   if (fabs(1 - centralDifference(initVal, 0.000001, func)) >= 1) {
     return -1;
   }
