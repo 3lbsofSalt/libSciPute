@@ -163,8 +163,7 @@ char *test_lu_solve_system() {
   double* b = multiplyMatrixVector(A, y);
 
   struct Matrix* L = LUFactorization(A);
-  double* c = lowerTriBackSub(L, b);
-  double* x = upperTriBackSub(A, c);
+  double* x = LU_solve_system(A, L, b);
 
   float total = 0;
   for(int i = 0; i < 10; i++) {
@@ -173,7 +172,6 @@ char *test_lu_solve_system() {
   }
 
   free(x);
-  free(c);
   free(b);
   deleteMatrix(A);
   deleteMatrix(L);

@@ -9,7 +9,7 @@
 
 #define mu_suite_start() char *message = NULL
 
-#define float_eq(f1, f2, diff) fabs(f1 - f2) < diff 
+#define float_eq(f1, f2, diff) fabs(f1 - f2) <= diff 
 
 #define mu_assert(test, message) if(!(test)) {\
   log_err(message); return message; }

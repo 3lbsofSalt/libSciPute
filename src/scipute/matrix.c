@@ -60,6 +60,7 @@ double* multiplyMatrixVector(struct Matrix* m, double vec[]) {
   for(int i = 0; i < m->rows; i++) {
     double total = 0;
     for(int j = 0; j < m->cols; j++) {
+      //printf("Yarg: %f\n", vec[j]);
       total += getMatrixData(m, i, j) * vec[j];
     }
 
@@ -163,3 +164,11 @@ struct Matrix* LUFactorization(struct Matrix* A) {
 
   return L;
 }
+
+double* LU_solve_system(struct Matrix* U, struct Matrix* L, double* b) {
+  double* c = lowerTriBackSub(L, b);
+  double* x = upperTriBackSub(U, c);
+  free(c);
+  
+  return x;
+} 

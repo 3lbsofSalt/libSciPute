@@ -1,5 +1,5 @@
-#ifndef LIB_SCI_PUTE_ROOT_FINDING
-#define LIB_SCI_PUTE_ROOT_FINDING
+#ifndef LIB_SCI_PUTE_FIXED_POINT
+#define LIB_SCI_PUTE_FIXED_POINT
 
 #include "types.h"
 

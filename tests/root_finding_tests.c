@@ -20,6 +20,8 @@ char *test_bisection() {
   mu_assert(error == 0, "There was an error in the second bisection root finding test!");
   mu_assert(float_eq(*result, 3, tol), "Incorrect root found in the second bisection root finding test.");
 
+  free(result);
+
   return NULL;
 }
 
@@ -33,6 +35,8 @@ char *test_newton() {
   error = newtons(test_function, 3.5, 0.00001, 1000, result);
   mu_assert(error == 0, "There was an error in the second Newton's root finding test!");
   mu_assert(float_eq(*result, 3, tol), "Incorrect root found in the second Newton's root finding test.");
+
+  free(result);
 
   return NULL;
 }
@@ -48,6 +52,8 @@ char *test_secant() {
   mu_assert(error == 0, "There was an error in the second secant root finding test!");
   mu_assert(float_eq(*result, 3, tol), "Incorrect root found in the second secant root finding test.");
 
+  free(result);
+
   return NULL;
 }
 
@@ -61,6 +67,8 @@ char *test_hybrid_bisect_secant() {
   error = hybrid_bisect_secant(test_function, 2.25, 3.5, 0.000001, 1000, result);
   mu_assert(error == 0, "There was an error in the second hybrid_b_s root finding test!");
   mu_assert(float_eq(*result, 3, tol), "Incorrect root found in the second hybrid_b_s root finding test.");
+
+  free(result);
 
   return NULL;
 }

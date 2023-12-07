@@ -1,10 +1,10 @@
+#include "vector_norms.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-
-float *subtract_vector(float vector1[], float vector2[], int sizes) {
-  float *new_vec = malloc(sizes * sizeof(float));
+double *subtract_vector(double vector1[], double vector2[], int sizes) {
+  double *new_vec = malloc(sizes * sizeof(double));
 
   for(int i = 0; i < sizes; i++) {
     new_vec[i] = vector1[i] - vector2[i];
@@ -14,8 +14,8 @@ float *subtract_vector(float vector1[], float vector2[], int sizes) {
 
 }
 
-float l2_norm(float vector[], int v_size) {
-  float total = 0.0;
+double l2_norm(double vector[], int v_size) {
+  double total = 0.0;
   for(int i = 0; i < v_size; i++) {
     total = total + (vector[i] * vector[i]);
   }
@@ -23,16 +23,16 @@ float l2_norm(float vector[], int v_size) {
   return sqrtf(total);
 }
 
-float l2_distance(float vector1[], float vector2[], int sizes) {
-  float *new_vec = subtract_vector(vector1, vector2, sizes);
-  float size = l2_norm(new_vec, sizes);
+double l2_distance(double vector1[], double vector2[], int sizes) {
+  double *new_vec = subtract_vector(vector1, vector2, sizes);
+  double size = l2_norm(new_vec, sizes);
   free(new_vec);
   return size;
 }
 
-float l1_norm(float vector[], int v_size) {
+double l1_norm(double vector[], int v_size) {
 
-  float total = 0.0;
+  double total = 0.0;
   for(int i = 0; i < v_size; i++) {
     total = total + fabs(vector[i]);
   }
@@ -40,15 +40,15 @@ float l1_norm(float vector[], int v_size) {
   return total;
 }
 
-float l1_distance(float vector1[], float vector2[], int sizes) {
-  float *new_vec = subtract_vector(vector1, vector2, sizes);
-  float size = l1_norm(new_vec, sizes);
+double l1_distance(double vector1[], double vector2[], int sizes) {
+  double *new_vec = subtract_vector(vector1, vector2, sizes);
+  double size = l1_norm(new_vec, sizes);
   free(new_vec);
   return size;
 }
 
-float linf_norm(float vector[], int v_size) {
-  float total = 0;
+double linf_norm(double vector[], int v_size) {
+  double total = 0;
   for(int i = 0; i < v_size; i++) {
     if(fabs(vector[i]) > total) {
       total = fabs(vector[i]);
@@ -58,9 +58,9 @@ float linf_norm(float vector[], int v_size) {
   return total;
 }
 
-float linf_distance(float vector1[], float vector2[], int sizes) {
-  float *new_vec = subtract_vector(vector1, vector2, sizes);
-  float size = linf_norm(new_vec, sizes);
+double linf_distance(double vector1[], double vector2[], int sizes) {
+  double *new_vec = subtract_vector(vector1, vector2, sizes);
+  double size = linf_norm(new_vec, sizes);
   free(new_vec);
   return size;
 }

@@ -20,5 +20,7 @@ void gaussianElimination(struct Matrix* A, double b[]);
 double* upperTriBackSub(struct Matrix* U, double c[]);
 double* lowerTriBackSub(struct Matrix* L, double c[]);
 struct Matrix* LUFactorization(struct Matrix* A);
+double* LU_solve_system(struct Matrix* U, struct Matrix* L, double* b);
+void copyMatrix(struct Matrix* m1, struct Matrix* m2);
 
 #endif

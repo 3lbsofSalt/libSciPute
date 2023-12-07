@@ -1,14 +1,14 @@
 #ifndef LIB_SCI_PUTE_VECTOR_NORMS
 #define LIB_SCI_PUTE_VECTOR_NORMS
 
-float *subtract_vector(float vector1[], float vector2[], int sizes);
+double *subtract_vector(double vector1[], double vector2[], int sizes);
 
-float l2_norm(float vector[], int v_size);
-float l1_norm(float vector[], int v_size);
-float linf_norm(float vector[], int v_size);
+double l2_norm(double vector[], int v_size);
+double l1_norm(double vector[], int v_size);
+double linf_norm(double vector[], int v_size);
 
-float l1_distance(float vector1[], float vector2[], int sizes);
-float l2_distance(float vector1[], float vector2[], int sizes);
-float linf_distance(float vector1[], float vector2[], int sizes);
+double l1_distance(double vector1[], double vector2[], int sizes);
+double l2_distance(double vector1[], double vector2[], int sizes);
+double linf_distance(double vector1[], double vector2[], int sizes);
 
 #endif
