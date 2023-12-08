@@ -144,7 +144,6 @@ char* test_find_all_eigenvalues() {
     mu_assert(float_eq(result[0], 1, 0.01),"The smallest Eigenvalue was incorrect in the first test");
     mu_assert(float_eq(result[1], 2, 0.01),"The middle Eigenvalue was incorrect in the first test");
     mu_assert(float_eq(result[2], 21, 0.01),"The largest Eigenvalue was incorrect in the first test");
-    printVector(result, 3, "Vector 1");
   }
 
   {

@@ -1,4 +1,4 @@
-**Routine Name:**           inverse_power_iteration
+**Routine Name:**           find_all_eigenvalues
 
 **Author:** Max Ramsdell
 
