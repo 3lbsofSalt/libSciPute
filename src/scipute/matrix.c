@@ -91,7 +91,7 @@ void gaussianElimination(struct Matrix* A, double b[]) {
 }
 
 // Assume U is an upper-triangular square matrix
-double* upperTriBackSub(struct Matrix* U, double c[]) {
+double* upperTriBackSub(struct Matrix* U, double c[], int *ops) {
   double* x = calloc(U->cols, sizeof(double));
 
   // Start at the bottom of the matrix
@@ -103,15 +103,17 @@ double* upperTriBackSub(struct Matrix* U, double c[]) {
     for(int j = U->cols - 1; j > i; j--) {
       // Substitute in the values and transform x accordingly
       x[i] -= getMatrixData(U, i, j) * x[j];
+      *ops += 2;
     }
     x[i] /= getMatrixData(U, i, i);
+    *ops += 1;
   }
 
   return x;
 }
 
 // Assume L is a lower triangular square matrix
-double* lowerTriBackSub(struct Matrix* L, double c[]) {
+double* lowerTriBackSub(struct Matrix* L, double c[], int *ops) {
   double* x = calloc(L->cols, sizeof(double));
 
   for(int i = 0; i < L->rows; i++) {
@@ -119,14 +121,16 @@ double* lowerTriBackSub(struct Matrix* L, double c[]) {
 
     for(int j = 0; j < i; j++) {
       x[i] -= getMatrixData(L, i, j) * x[j];
+      *ops += 2;
     }
     x[i] /= getMatrixData(L, i, i);
+    *ops += 1;
   }
 
   return x;
 }
 
-struct Matrix* LUFactorization(struct Matrix* A) {
+struct Matrix* LUFactorization(struct Matrix* A, int* ops) {
   struct Matrix* L = create_matrix(A->rows, A->cols);
 
   // Setting all of the L pivots to 1 in preparation for the calculation
@@ -153,9 +157,11 @@ struct Matrix* LUFactorization(struct Matrix* A) {
       // are 0, so we don't need to worry about them.
       for(int x = 0; x < j; x++) {
         final -= getMatrixData(L, i, x) * getMatrixData(A, x, j);
+        *ops += 2;
       }
 
       final /= getMatrixData(A, j, j);
+      *ops += 1;
       setMatrixData(L, i, j, final);
     }
   }
@@ -165,9 +171,9 @@ struct Matrix* LUFactorization(struct Matrix* A) {
   return L;
 }
 
-double* LU_solve_system(struct Matrix* U, struct Matrix* L, double* b) {
-  double* c = lowerTriBackSub(L, b);
-  double* x = upperTriBackSub(U, c);
+double* LU_solve_system(struct Matrix* U, struct Matrix* L, double* b, int *ops) {
+  double* c = lowerTriBackSub(L, b, ops);
+  double* x = upperTriBackSub(U, c, ops);
   free(c);
   
   return x;

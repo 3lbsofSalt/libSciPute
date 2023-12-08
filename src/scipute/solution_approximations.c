@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int jacobi_method(struct Matrix *A, double *b, double tol, int maxIter, double *x) {
+int jacobi_method(struct Matrix *A, double *b, double tol, int maxIter, double *x, int *ops) {
   int iters = 0;
   double error = tol * 10;
   double* next_x = calloc(sizeof(double), A->rows);
@@ -23,8 +23,10 @@ int jacobi_method(struct Matrix *A, double *b, double tol, int maxIter, double *
       double sum = b[i];
       for(int j = 0; j < A->rows; j++) {
         sum = sum - getMatrixData(A, i, j) * x[j];
+        *ops = *ops + 2;
       }
       next_x[i] = x[i] + sum / getMatrixData(A, i, i);
+      *ops = *ops + 2;
     }
 
     // Too many iterations?
@@ -41,6 +43,7 @@ int jacobi_method(struct Matrix *A, double *b, double tol, int maxIter, double *
     for(int i = 0; i < A->rows; i++) {
       x[i] = next_x[i];
       res[i] = b[i] - temp[i];
+      *ops += 1;
     }
 
     free(temp);
@@ -54,7 +57,7 @@ int jacobi_method(struct Matrix *A, double *b, double tol, int maxIter, double *
   return 0;
 }
 
-int gauss_seidel_method(struct Matrix *A, double *b, double tol, int maxIter, double *x) {
+int gauss_seidel_method(struct Matrix *A, double *b, double tol, int maxIter, double *x, int *ops) {
   int iters = 0;
   double error = tol * 10;
   for(int i = 0; i < A->rows; i++) {
@@ -69,8 +72,10 @@ int gauss_seidel_method(struct Matrix *A, double *b, double tol, int maxIter, do
           continue;
         }
         sum += getMatrixData(A, i, j) * x[j];
+        *ops += 2;
       }
       x[i] = (b[i] - sum) / getMatrixData(A, i, i);
+      *ops += 2;
     }
     if(++iters > maxIter) {
       return -1;
@@ -82,6 +87,7 @@ int gauss_seidel_method(struct Matrix *A, double *b, double tol, int maxIter, do
     double* err_vec = calloc(sizeof(double), A->rows);
     for(int i = 0; i < A->rows; i++) {
       err_vec[i] = b[i] - temp[i];
+      *ops += 1;
     }
 
     free(temp);

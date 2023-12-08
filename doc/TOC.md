@@ -33,3 +33,14 @@
 - [Newton's Method](root_finding/newtons.md)
 - [Secant Method](root_finding/secant.md)
 - [Hybrid Method](root_finding/hybrid-bisect-secant.md)
+
+## Eigenvalue Finding Routines
+- [Power Iteration](eigenvalues/power_iteration.md)
+- [Inverse Power Iteration](eigenvalues/inverse_power_iteration.md)
+- [Power Iteration For Leslie Matrices](eigenvalues/leslie_matrix.md)
+- [Shifted Power Method](eigenvalues/shifted_power_method.md)
+- [Routine to Find All Eigenvalues](eigenvalues/find_all_eigenvalues.md)
+
+## Approximations of Solutions to Systems of Equations
+- [Jacobi Method](solution_approximations/jacobi_method.md) 
+- [Gauss-Seidel Method](solution_approximations/gauss_seidel_method.md) 

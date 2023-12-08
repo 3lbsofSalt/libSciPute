@@ -35,7 +35,8 @@ char *test_jacobi_iteration() {
   double* b = multiplyMatrixVector(A, y);
   double* x = calloc(sizeof(double), A->rows);
 
-  int error = jacobi_method(A, b, 0.0001, 1000, x);
+  int* ops = 0;
+  int error = jacobi_method(A, b, 0.0001, 1000, x, ops);
   mu_assert(error == 0, "There was an error in the jacobi_method!");
 
   for(int i = 0; i < A->rows; i++) {
@@ -71,7 +72,8 @@ char *test_gauss_seidel() {
   double* b = multiplyMatrixVector(A, y);
   double* x = calloc(sizeof(double), 100);
 
-  int error = gauss_seidel_method(A, b, 0.00001, 1000, x);
+  int* ops = 0;
+  int error = gauss_seidel_method(A, b, 0.00001, 1000, x, ops);
   mu_assert(error == 0, "There was an error in the gauss-seidel method!");
 
   float total = 0;
