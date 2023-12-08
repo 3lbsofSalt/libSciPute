@@ -59,10 +59,9 @@ int inverse_power_iteration(struct Matrix* A, int max_iter, double tol, double* 
 
   // Rather than finding the determinant of the matrix to make it inverse, we just solve for the next
   // Eigenvector rather than multiply for it. It does the same thing: A^-1 * x = x1 <=> Ax1 = x. Solve for x1
-  int ops = 0;
-  struct Matrix* L = LUFactorization(temp, &ops);
+  struct Matrix* L = LUFactorization(temp);
 
-  double* next_vec = LU_solve_system(temp, L, vector, &ops);
+  double* next_vec = LU_solve_system(temp, L, vector);
   double eigenvalue = 0;
   double nextEig = dotProduct(vector, next_vec, temp->rows);
 
@@ -72,7 +71,7 @@ int inverse_power_iteration(struct Matrix* A, int max_iter, double tol, double* 
 
     normalize(vector, temp->rows);
     free(next_vec);
-    next_vec = LU_solve_system(temp, L, vector, &ops);
+    next_vec = LU_solve_system(temp, L, vector);
     nextEig = dotProduct(vector, next_vec, temp->rows);
 
     if(fabs(eigenvalue - nextEig) < tol) {
@@ -132,7 +131,6 @@ int find_all_eigenvalues(struct Matrix *A, int max_iter, double tol, double *res
   enqueue(queue, upperBound, lowerBound);
   double res = 0;
 
-  printMatrix(A);
   while(!is_empty(queue)) {
     struct QueueNode* next = dequeue(queue);
     double midPoint = (next->upperBound - next->lowerBound) / 2 + next->lowerBound;

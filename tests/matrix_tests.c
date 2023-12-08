@@ -60,8 +60,7 @@ char *test_back_sub() {
 
   setMatrixDataFromArray(U, vals);
 
-  int ops = 0;
-  double* x = upperTriBackSub(U, c, &ops);
+  double* x = upperTriBackSub(U, c);
 
   mu_assert(float_eq(x[0], -1, 0.00001), "First value in the back sub incorrect.");
   mu_assert(float_eq(x[1], 2.5, 0.00001), "Second value in the back sub incorrect.");
@@ -111,8 +110,7 @@ char *test_solve_system() {
 
   gaussianElimination(A, b);
 
-  int ops = 0;
-  double* x = upperTriBackSub(A, b, &ops);
+  double* x = upperTriBackSub(A, b);
 
   float total = 0;
   for(int i = 0; i < 10; i++) {
@@ -132,8 +130,7 @@ char *test_lu_factorization() {
   double vals[9] = {1, 2, 3, 2, 3, 1, -2, 3, -2};
   setMatrixDataFromArray(A, vals);
 
-  int ops = 0;
-  struct Matrix* L = LUFactorization(A, &ops);
+  struct Matrix* L = LUFactorization(A);
 
   double correctL[9] = {1, 0, 0, 2, 1, 0, -2, -7, 1};
   double correctU[9] = {1, 2, 3, 0, -1, -5, 0, 0, -31};
@@ -169,7 +166,6 @@ char *test_lu_solve_system() {
     setMatrixData(A, i, i, getMatrixData(A, i, i) + sum);
   }
 
-  int ops = 0;
 
   double y[A->rows];
   for(int i = 0; i < A->rows; i++) {
@@ -177,8 +173,8 @@ char *test_lu_solve_system() {
   }
   double* b = multiplyMatrixVector(A, y);
 
-  struct Matrix* L = LUFactorization(A, &ops);
-  double* x = LU_solve_system(A, L, b, &ops);
+  struct Matrix* L = LUFactorization(A);
+  double* x = LU_solve_system(A, L, b);
 
   float total = 0;
   for(int i = 0; i < 10; i++) {

@@ -17,10 +17,10 @@ void printMatrix(struct Matrix* m);
 
 double* multiplyMatrixVector(struct Matrix* m, double vec[]);
 void gaussianElimination(struct Matrix* A, double b[]);
-double* upperTriBackSub(struct Matrix* U, double c[], int *ops);
-double* lowerTriBackSub(struct Matrix* L, double c[], int *ops);
-struct Matrix* LUFactorization(struct Matrix* A, int *ops);
-double* LU_solve_system(struct Matrix* U, struct Matrix* L, double* b, int *ops);
+double* upperTriBackSub(struct Matrix* U, double c[]);
+double* lowerTriBackSub(struct Matrix* L, double c[]);
+struct Matrix* LUFactorization(struct Matrix* A);
+double* LU_solve_system(struct Matrix* U, struct Matrix* L, double* b);
 void copyMatrix(struct Matrix* m1, struct Matrix* m2);
 
 #endif

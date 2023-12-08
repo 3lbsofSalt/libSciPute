@@ -140,6 +140,10 @@ char* test_find_all_eigenvalues() {
 
     setMatrixDataFromArray(A, vals);
     int error = find_all_eigenvalues(A, 1000, tol, result);
+    mu_assert(error == 0, "There was an error in the Eigenvalue tests");
+    mu_assert(float_eq(result[0], 1, 0.01),"The smallest Eigenvalue was incorrect in the first test");
+    mu_assert(float_eq(result[1], 2, 0.01),"The middle Eigenvalue was incorrect in the first test");
+    mu_assert(float_eq(result[2], 21, 0.01),"The largest Eigenvalue was incorrect in the first test");
     printVector(result, 3, "Vector 1");
   }
 
@@ -152,7 +156,11 @@ char* test_find_all_eigenvalues() {
     setMatrixDataFromArray(A, vals);
 
     int error = find_all_eigenvalues(A, 1000, tol, result);
-    printVector(result, 4, "Result Vec 2");
+    mu_assert(error == 0, "There was an error in the Eigenvalue tests");
+    mu_assert(float_eq(result[0], 1.054507, 0.01),"The smallest Eigenvalue was incorrect in the second test");
+    mu_assert(float_eq(result[1], 0.948311, 0.01),"The second smallest Eigenvalue was incorrect in the second test");
+    mu_assert(float_eq(result[2], 3.97205, 0.01),"The second largest Eigenvalue was incorrect in the second test");
+    mu_assert(float_eq(result[3], 22.2263, 0.01),"The largest Eigenvalue was incorrect in the second test");
 
     deleteMatrix(A);
   }
